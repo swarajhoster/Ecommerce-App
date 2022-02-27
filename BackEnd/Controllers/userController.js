@@ -138,7 +138,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   sendToken(user, 200, res);
 });
 
-//Get User Detail
+//Get User Detail(id)
 exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.user.id);
   res.status(200).json({
@@ -159,6 +159,10 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
 
   if (req.body.newPassword !== req.body.confirmPassword) {
     return next(new ErrorHander("Password does not match", 400));
+  } 
+  
+  if (!req.body.newPassword || req.body.confirmPassword) {
+    return next(new ErrorHander("Enter the Password", 400));
   }
 
   user.password = req.body.newPassword;
@@ -258,5 +262,3 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
 });
 
 //--------------------------------------USER API OVER ----------------------------------------------------------//
-
-

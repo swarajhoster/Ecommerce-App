@@ -27,6 +27,7 @@ exports.authorizeRoles = (...roles) => {
         )
       );
     }
-    next();
+    //This a middelware so next(), else the code was getting stuck here itself.
+    next(); 
   };
 };
