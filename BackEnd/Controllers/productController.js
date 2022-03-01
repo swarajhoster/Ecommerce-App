@@ -16,6 +16,7 @@ exports.createProduct = catchAsyncErrors(async (req, res) => {
     succues: true,
     product,
   });
+  
 });
 
 //Get All Product
