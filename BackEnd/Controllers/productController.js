@@ -20,6 +20,8 @@ exports.createProduct = catchAsyncErrors(async (req, res) => {
 
 //Get All Product
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
+  // return next(new ErrorHander("Temp error", 500));
+
   const resultPerPage = process.env.resultPerPage;
   const productCount = await Product.countDocuments();
 
@@ -84,9 +86,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-
 // Product Reviews Starts
-
 
 exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
   //Destructuring

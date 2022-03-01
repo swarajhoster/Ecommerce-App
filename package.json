@@ -1,24 +1,34 @@
 {
   "name": "ecommerce-app",
   "version": "1.0.0",
-  "description": "This is MERN stack big project with all features by six pack programmer",
-  "main": "BackEnd/server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node BackEnd/server.js",
-    "dev": "nodemon BackEnd/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm BackEnd/server.js",
+    "dev" : "nodemon BackEnd/server.js"
   },
-  "author": "Swaraj Kumar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swarajhoster/Ecommerce-App.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swarajhoster/Ecommerce-App/issues"
+  },
+  "homepage": "https://github.com/swarajhoster/Ecommerce-App#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.1",
+    "body-parser": "^1.19.2",
     "cookie-parser": "^1.4.6",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.5",
+    "mongoose": "^6.2.4",
     "nodemailer": "^6.7.2",
+    "stripe": "^8.205.0",
     "validator": "^13.7.0"
   }
 }

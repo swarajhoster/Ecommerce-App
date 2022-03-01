@@ -17,10 +17,9 @@ connectDatabase();
 
 //Basic Get Url
 app.get("/", (req, res) => {
-  res
-    .json(
-      "THIS IS A PRIVIATE API, USED FOR COMMERCIAL PURPOSE, ANYONE WHO WILL USE THIS API THEY WILL TRESPASSED"
-    );
+  res.json(
+    "THIS IS A PRIVIATE API, USED FOR COMMERCIAL PURPOSE, ANYONE WHO WILL USE THIS API THEY WILL TRESPASSED"
+  );
 });
 
 const server = app.listen(process.env.PORT, () => {
