@@ -1,9 +1,8 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import { useDispatch, useSelector } from "react-redux";
-
-import { getProduct } from "../../actions/productAction";
-import Product from "./Product.js";
+import { clearErrors, getProduct } from "../../actions/productAction";
+import Product from "./ProductCard.js";
 import MetaData from "../layout/MetaData.js";
 import "./Home.css";
 import Loader from "../layout/Loader/Loader";
@@ -15,11 +14,11 @@ const Home = () => {
   const { loading, error, products, productCount } = useSelector(
     (state) => state.products
   );
-  // console.log(products);
 
   useEffect(() => {
     if (error) {
-      return alert.error(error);
+      alert.error(error);
+      dispatch(clearErrors());
     }
     dispatch(getProduct());
   }, [dispatch, error, alert]);

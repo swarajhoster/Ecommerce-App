@@ -15,7 +15,7 @@ const order = require("./Routes/orderRoutes");
 //Using Routes
 app.use("/api/v1", product);
 app.use("/api/v1", user);
-// app.use("/api/v1", order);
+app.use("/api/v1", order);
 
 //Middelware for Error
 app.use(errorMiddelware);

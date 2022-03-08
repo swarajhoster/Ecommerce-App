@@ -24,7 +24,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res) => {
   // return next(new ErrorHander("Temp error", 500));
 
   const resultPerPage = process.env.resultPerPage;
-  const productCount = await Product.countDocuments();
+  const productsCount = await Product.countDocuments();
 
   const apiFeature = new ApiFeatures(Product.find(), req.query)
     .search()
@@ -35,7 +35,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res) => {
   res.status(200).json({
     succues: true,
     products,
-    productCount,
+    productsCount,
   });
 });
 

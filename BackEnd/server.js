@@ -10,7 +10,8 @@ process.on("uncaughtException", (err) => {
 });
 
 //Config
-dotenv.config({ path: "BackEnd/config/config.env" });
+const path = require("path");
+dotenv.config({ path: path.join(__dirname, "config/config.env") });
 
 //Connecting to mongoDb
 connectDatabase();
